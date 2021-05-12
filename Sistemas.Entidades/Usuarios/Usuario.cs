@@ -15,16 +15,16 @@ namespace Sistemas.Entidades.Usuarios
         [Display(Name ="Número Documento")]
         public int numDocumento { get; set; }
         
-        [Required]
+        [Required(ErrorMessage ="la dirección es obligatoria")]
         [StringLength(70, MinimumLength =25, ErrorMessage ="Dirección debe de comprender entre un minimo 25 y máximo 70 caracteres")]
         public string direccion { get; set; }
         
-        [Required]
+        [Required(ErrorMessage= "Número de télefono es obligatorio")]
         [StringLength(11, ErrorMessage ="Número de teléfono de tener 11 números")]
         public string telefono { get; set; }
        
-        [Display(Name ="Correo Electrónico:")]
-        [Required]
+        [Display(Name ="Correo Electrónico:")
+        [Required(ErrorMessage ="Debe ingresar un correo electrónico")]
         [EmailAddress]
         public string email { get; set; }
         
