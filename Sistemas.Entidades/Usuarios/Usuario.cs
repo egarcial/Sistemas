@@ -6,7 +6,7 @@ namespace Sistemas.Entidades.Usuarios
     {
         public int idUsuario { get; set; }
 
-        [Required(ErrorMessage ="Nombre de Catergoria es obligatorio")]
+        [Required(ErrorMessage ="Nombre de Catergoria es obligatorio!!")]
         [StringLength(100, MinimumLength =4, ErrorMessage ="Nombre debe comprender entre un minimo de 4 y máximo 100 carateres")]
         public string nombre { get; set; }
 
