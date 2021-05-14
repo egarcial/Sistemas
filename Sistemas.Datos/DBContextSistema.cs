@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Sistemas.Datos.Mapping.Almacen;
+using Sistemas.Datos.Mapping.Ventas;
 
 namespace Sistemas.Datos
 {
@@ -20,7 +21,8 @@ namespace Sistemas.Datos
             base.OnModelCreating(modelBuilder);
             
             modelBuilder.ApplyConfiguration(new CategoriaMapping());//referencia a la clase CategoriaMapping
-
+            modelBuilder.ApplyConfiguration(new ArticuloMapping());
+            modelBuilder.ApplyConfiguration(new ComprobanteMapping());
         }
     }
 }
