@@ -13,10 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Mapping\Usuario\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Sistemas.Entidades\Sistemas.Entidades.csproj" />
   </ItemGroup>
 
