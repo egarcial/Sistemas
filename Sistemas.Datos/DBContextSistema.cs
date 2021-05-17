@@ -2,6 +2,7 @@
 using Sistemas.Datos.Mapping.Almacen;
 using Sistemas.Datos.Mapping.Ventas;
 using Sistemas.Datos.Mapping.Usuario;
+using Sistemas.Entidades.Almacen;
 
 namespace Sistemas.Datos
 {
@@ -9,6 +10,7 @@ namespace Sistemas.Datos
     base de datos SQL*/
     public class DBContextSistema : DbContext
     {
+        public DbSet<Categoria> Categorias { get; set; }
         /*traendo todas las opciones que nos permitan utilizar
          el dbcontext para poder hacer conexion con la base de datos*/
         public DBContextSistema(DbContextOptions<DBContextSistema> options) 
