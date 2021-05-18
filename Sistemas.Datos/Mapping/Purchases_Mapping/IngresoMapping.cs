@@ -5,12 +5,13 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Sistemas.Datos.Mapping.Sales_Mapping
+namespace Sistemas.Datos.Mapping.Purchases_Mapping
 {
-    public class IngresoMapping : IEntityTypeConfiguration<Ingreso>
+    class IngresoMapping : IEntityTypeConfiguration<Ingreso>
     {
         public void Configure(EntityTypeBuilder<Ingreso> builder)
         {
+
             builder.ToTable("tbl_Ingreso").
                HasKey(ingreso => ingreso.idIngreso);
             builder
@@ -20,11 +21,9 @@ namespace Sistemas.Datos.Mapping.Sales_Mapping
             builder
                 .Property(ingreso => ingreso.idTipoComprobante);
             builder
-                .Property(ingreso => ingreso.serieComprobante)
-                .HasMaxLength(7);
+                .Property(ingreso => ingreso.serieComprobante);
             builder
-                .Property(ingreso => ingreso.numComprobante)
-                .HasMaxLength(10);
+                .Property(ingreso => ingreso.numComprobante);
             builder
                 .Property(ingreso => ingreso.fechaHora);
             builder
@@ -33,6 +32,7 @@ namespace Sistemas.Datos.Mapping.Sales_Mapping
                 .Property(ingreso => ingreso.total);
             builder
                 .Property(ingreso => ingreso.idEstado);
+
         }
     }
 }

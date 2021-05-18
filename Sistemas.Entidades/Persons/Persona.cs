@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Sistemas.Entidades.Users
+namespace Sistemas.Entidades.Persons
 {
     public class Persona
     {

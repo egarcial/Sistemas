@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Sistemas.Entidades.Sales
 {
-    public class Venta
+    public class Ventas
     {
         public int idVenta { get; set; }
         public int idCliente { get; set; }

@@ -7,9 +7,9 @@ using System.Text;
 
 namespace Sistemas.Datos.Mapping.Sales_Mapping
 {
-    public class VentasMapping : IEntityTypeConfiguration<Venta>
+    public class VentasMapping : IEntityTypeConfiguration<Ventas>
     {
-        public void Configure(EntityTypeBuilder<Venta> builder)
+        public void Configure(EntityTypeBuilder<Ventas> builder)
     {
 
         builder.ToTable("tbl_Ventas").

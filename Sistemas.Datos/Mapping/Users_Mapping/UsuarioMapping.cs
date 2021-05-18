@@ -1,12 +1,15 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Sistemas.Entidades.Usuarios;
+using Sistemas.Entidades.Users;
+using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace Sistemas.Datos.Mapping.Usuario
+namespace Sistemas.Datos.Mapping.Users_Mapping
 {
-    public class UsuarioMapping : IEntityTypeConfiguration<Usuarios>
+    public class UsuarioMapping : IEntityTypeConfiguration<Entidades.Users.Usuario>
     {
-        public void Configure(EntityTypeBuilder<Usuarios> builder)
+        public void Configure(EntityTypeBuilder<Entidades.Users.Usuario> builder)
         {
             builder.ToTable("tbl_Usuario").
               HasKey(usuario => usuario.idUsuario);
@@ -30,7 +33,7 @@ namespace Sistemas.Datos.Mapping.Usuario
             builder
                 .Property(usuario => usuario.idTipoDocumento);
             builder
-                .Property(usuario => usuario.numDocumento)
+                .Property(usuario => usuario.numeroDocumento)
                 .HasMaxLength(20);
             builder
                 .Property(usuario => usuario.idDireccion);

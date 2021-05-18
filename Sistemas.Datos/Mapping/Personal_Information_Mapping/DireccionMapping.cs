@@ -1,15 +1,17 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Sistemas.Entidades.Usuarios;
+using Sistemas.Entidades.Personal_Information;
+using System;
+using System.Collections.Generic;
+using System.Text;
 
-
-namespace Sistemas.Datos.Mapping.Usuario
+namespace Sistemas.Datos.Mapping.Personal_Information_Mapping
 {
     public class DireccionMapping : IEntityTypeConfiguration<Direccion>
     {
         public void Configure(EntityTypeBuilder<Direccion> builder)
         {
-            builder.ToTable("direccion").
+            builder.ToTable("tbl_Direccion").
                HasKey(direccion => direccion.idDireccion);
             builder
                 .Property(direccion => direccion.idMunicipio);

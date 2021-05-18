@@ -1,10 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Sistemas.Entidades.Usuarios;
+using Sistemas.Entidades.Persons;
+using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace Sistemas.Datos.Mapping.Usuario
+namespace Sistemas.Datos.Mapping.Persons_Mapping
 {
-   public  class PersonaMapping : IEntityTypeConfiguration<Persona>
+    public class PersonaMapping : IEntityTypeConfiguration<Persona>
     {
         public void Configure(EntityTypeBuilder<Persona> builder)
         {

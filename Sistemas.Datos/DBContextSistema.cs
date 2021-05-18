@@ -1,8 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Sistemas.Datos.Mapping.Almacen;
-using Sistemas.Datos.Mapping.Ventas;
-using Sistemas.Datos.Mapping.Usuario;
-using Sistemas.Entidades.Almacen;
+using Sistemas.Datos.Mapping.Conditions_Mapping;
+using Sistemas.Datos.Mapping.Documents_Mapping;
+using Sistemas.Datos.Mapping.Personal_Information_Mapping;
+using Sistemas.Datos.Mapping.Persons_Mapping;
+using Sistemas.Datos.Mapping.Purchases_Mapping;
+using Sistemas.Datos.Mapping.Sales_Mapping;
+using Sistemas.Datos.Mapping.Users_Mapping;
+using Sistemas.Datos.Mapping.WareHouse_Mapping;
+using Sistemas.Entidades.WareHouse;
 
 namespace Sistemas.Datos
 {
@@ -13,7 +18,7 @@ namespace Sistemas.Datos
         public DbSet<Categoria> Categorias { get; set; }
         /*traendo todas las opciones que nos permitan utilizar
          el dbcontext para poder hacer conexion con la base de datos*/
-        public DBContextSistema(DbContextOptions<DBContextSistema> options) 
+        public DBContextSistema(DbContextOptions<DBContextSistema> options)
             : base(options)
         {
 
@@ -22,7 +27,7 @@ namespace Sistemas.Datos
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {   //comenzamos a usar los modelos que tenemos en la capa entidades
             base.OnModelCreating(modelBuilder);
-            
+
             modelBuilder
                 .ApplyConfiguration(new CategoriaMapping());//referencia a la clase CategoriaMapping
             modelBuilder
@@ -45,6 +50,7 @@ namespace Sistemas.Datos
                .ApplyConfiguration(new EmailMapping());
             modelBuilder
                .ApplyConfiguration(new EstadoMapping());
+            
             modelBuilder
                .ApplyConfiguration(new IngresoMapping());
             modelBuilder

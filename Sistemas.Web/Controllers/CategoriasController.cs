@@ -1,8 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Sistemas.Datos;
-using Sistemas.Entidades.Almacen;
-using System;
+using Sistemas.Entidades.WareHouse;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;

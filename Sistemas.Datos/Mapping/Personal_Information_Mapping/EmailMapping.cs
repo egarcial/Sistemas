@@ -1,8 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Sistemas.Entidades.Usuarios;
+using Sistemas.Entidades.Personal_Information;
+using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace Sistemas.Datos.Mapping.Usuario
+namespace Sistemas.Datos.Mapping.Personal_Information_Mapping
 {
     public class EmailMapping : IEntityTypeConfiguration<Email>
     {

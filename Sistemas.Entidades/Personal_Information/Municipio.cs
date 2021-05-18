@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.ComponentModel.DataAnnotations;
+using System.Text;
 
-namespace Sistemas.Entidades.Users
+namespace Sistemas.Entidades.Personal_Information
 {
+
     public class Municipio
     {
         public int idMunicipio { get; set; }

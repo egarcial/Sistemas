@@ -1,8 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Sistemas.Entidades.Usuarios;
+using Sistemas.Entidades.Persons;
+using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace Sistemas.Datos.Mapping.Usuario
+namespace Sistemas.Datos.Mapping.Persons_Mapping
 {
     public class TipoPersonaMapping : IEntityTypeConfiguration<TipoPersona>
     {
