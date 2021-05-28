@@ -13,8 +13,10 @@ namespace Sistemas.Datos.Mapping.Personal_Information_Mapping
         {
             builder.ToTable("tbl_Email").
                HasKey(email => email.idEmail);
+
             builder
                 .Property(email => email.emailPersonal);
+
             builder
                 .Property(email => email.emailLaboral);
         }

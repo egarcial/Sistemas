@@ -13,15 +13,18 @@ namespace Sistemas.Datos.Mapping.Users_Mapping
         {
             builder.ToTable("tbl_Rol")
                .HasKey(rol => rol.idRol);
+
             builder
                 .Property(rol => rol.nombre)
                 .HasMaxLength(30);
+
             builder
                 .Property(rol => rol.descripcion)
                 .HasMaxLength(100);
-            builder
-                .Property(rol => rol.idCondicion);
 
+            builder.HasOne(rol => rol.Condiciones)
+                .WithOne();
+            
         }
     }
 }

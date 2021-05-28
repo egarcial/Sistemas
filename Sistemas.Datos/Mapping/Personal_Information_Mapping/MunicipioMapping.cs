@@ -12,12 +12,15 @@ namespace Sistemas.Datos.Mapping.Personal_Information_Mapping
         public void Configure(EntityTypeBuilder<Municipio> builder)
         {
             builder.ToTable("tbl_Municipio").
-               HasKey(municipio => municipio.idMunicipio);
+                 HasKey(municipio => municipio.idMunicipio);
+
             builder
                 .Property(municipio => municipio.nombreMunicipio)
                 .HasMaxLength(70);
-            builder
-                .Property(municipio => municipio.idDepartamento);
+
+
+            builder.HasOne(municipio => municipio.Departamentos)
+                 .WithOne();
         }
     }
 }

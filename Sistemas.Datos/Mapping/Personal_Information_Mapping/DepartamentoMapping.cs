@@ -14,6 +14,7 @@ namespace Sistemas.Datos.Mapping.Personal_Information_Mapping
         {
             builder.ToTable("tbl_Departamento")
                 .HasKey(departamento => departamento.idDepatamento);
+
             builder.Property(departamento => departamento.nombreDepartamento)
                 .HasMaxLength(50);
 

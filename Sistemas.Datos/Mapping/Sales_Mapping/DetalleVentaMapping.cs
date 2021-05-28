@@ -13,16 +13,19 @@ namespace Sistemas.Datos.Mapping.Sales_Mapping
         {
             builder.ToTable("tbl_DetalleVenta").
                HasKey(detVenta => detVenta.idDetalleVenta);
-            builder
-                .Property(detVenta => detVenta.idVenta);
-            builder
-                .Property(detVenta => detVenta.idVenta);
-            builder
-                .Property(detVenta => detVenta.idArticulo);
+
+            builder.HasOne(detVenta => detVenta.Venta)
+               .WithOne();
+
+            builder.HasOne(detVenta => detVenta.Articulos)
+              .WithOne();
+
             builder
                 .Property(detVenta => detVenta.cantidad);
+
             builder
                 .Property(detVenta => detVenta.precioDetalleVenta);
+
             builder
                 .Property(detVenta => detVenta.descuento);
         }

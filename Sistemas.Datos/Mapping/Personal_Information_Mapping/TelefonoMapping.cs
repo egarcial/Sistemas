@@ -13,15 +13,19 @@ namespace Sistemas.Datos.Mapping.Personal_Information_Mapping
         {
             builder.ToTable("tbl_Telefono").
                HasKey(tel => tel.idTelefono);
+
             builder
                 .Property(tel => tel.movil_1)
                 .HasMaxLength(11);
+
             builder
                 .Property(tel => tel.movil_2)
                 .HasMaxLength(11);
+
             builder
                 .Property(tel => tel.telCasa)
                 .HasMaxLength(11);
+
             builder
                 .Property(tel => tel.telOficina)
                 .HasMaxLength(11);

@@ -13,6 +13,7 @@ namespace Sistemas.Datos.Mapping.Documents_Mapping
         {
             builder.ToTable("tbl_Documento").
                HasKey(documento => documento.idTipoDocumento);
+
             builder
                 .Property(documento => documento.tipoDocumento)
                 .HasMaxLength(50);

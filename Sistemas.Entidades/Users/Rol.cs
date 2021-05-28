@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sistemas.Entidades.Conditions;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
@@ -17,7 +18,7 @@ namespace Sistemas.Entidades.Users
         [StringLength(100, ErrorMessage = "Descripcion no puede sobrepasar los 100 caracteres")]
         public string descripcion { get; set; }
 
-        public int idCondicion { get; set; }
+        public List<Condicion> Condiciones { get; set; }
 
     }
 }

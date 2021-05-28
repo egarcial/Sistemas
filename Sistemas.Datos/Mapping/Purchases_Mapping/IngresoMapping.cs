@@ -13,25 +13,34 @@ namespace Sistemas.Datos.Mapping.Purchases_Mapping
         {
 
             builder.ToTable("tbl_Ingreso").
-               HasKey(ingreso => ingreso.idIngreso);
-            builder
-                .Property(ingreso => ingreso.idProveedor);
-            builder
-                .Property(ingreso => ingreso.idUsuario);
-            builder
-                .Property(ingreso => ingreso.idTipoComprobante);
+                HasKey(ingreso => ingreso.idIngreso);
+
+            builder.HasOne(ingreso => ingreso.PersonaProveedor)
+                .WithOne();
+
+            builder.HasOne(ingreso => ingreso.Usuarios)
+                 .WithOne();
+
+            builder.HasOne(ingreso => ingreso.Comprobantes)
+                 .WithOne();
+           
             builder
                 .Property(ingreso => ingreso.serieComprobante);
+
             builder
                 .Property(ingreso => ingreso.numComprobante);
+
             builder
                 .Property(ingreso => ingreso.fechaHora);
+
             builder
                 .Property(ingreso => ingreso.impuesto);
+
             builder
                 .Property(ingreso => ingreso.total);
-            builder
-                .Property(ingreso => ingreso.idEstado);
+
+            builder.HasOne(ingreso => ingreso.Estados)
+              .WithOne();
 
         }
     }

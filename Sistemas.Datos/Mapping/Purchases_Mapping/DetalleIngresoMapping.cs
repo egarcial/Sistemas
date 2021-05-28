@@ -15,12 +15,16 @@ namespace Sistemas.Datos.Mapping.Purchases_Mapping
 
             builder.ToTable("tbl_DetalleIngreso").
                HasKey(detIngreso => detIngreso.idDetalleIngreso);
-            builder
-                .Property(detIngreso => detIngreso.idingreso);
-            builder
-                .Property(detIngreso => detIngreso.idArticulo);
+
+            builder.HasOne(detIngreso => detIngreso.Ingresos)
+              .WithOne();
+
+            builder.HasOne(detIngreso => detIngreso.Articulos)
+             .WithOne();
+
             builder
                 .Property(detIngreso => detIngreso.cantidad);
+
             builder
                 .Property(detIngreso => detIngreso.precioDetalle);
 

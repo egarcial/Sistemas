@@ -45,14 +45,14 @@ namespace Sistemas.Web.Controllers.Conditions_Controllers
         //PUT esta nos sirve para mandar informacion a nuestra API
         //Put api/condicion
         [HttpPut("idCondicion")]
-        public async Task<IActionResult> PutCondicion(int id, Condicion condicion)
+        public async Task<IActionResult> PutCondicion(int id, Condicion condiciones)
         {
-            if (id != condicion.idCondicion)
+            if (id != condiciones.idCondicion)
             {
                 return BadRequest();// si es diferente no da un badrequest
             }
 
-            _context.Entry(condicion)
+            _context.Entry(condiciones)
                 .State = EntityState.Modified;/*indicar al dbcontexr con el entity que lo que hay en condicion
                                                                      vamos a realizar una modificacion , las entidad ya tiene las propiedades
                                                                        o informacion que vamos a guardar*/

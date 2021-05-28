@@ -13,36 +13,49 @@ namespace Sistemas.Datos.Mapping.Persons_Mapping
         {
             builder.ToTable("tbl_Persona").
                HasKey(persona => persona.idPersona);
-            builder
-                .Property(persona => persona.idTipoPersona);
+
+            builder.HasOne(persona => persona.TipoPersonas)
+             .WithOne();
+
             builder
                 .Property(persona => persona.primerNombre)
                 .HasMaxLength(50);
+
             builder
                 .Property(persona => persona.segundoNombre)
                 .HasMaxLength(50);
+
             builder
                 .Property(persona => persona.apellidoCasada)
                 .HasMaxLength(50);
+
             builder
                 .Property(persona => persona.primerApellido)
                 .HasMaxLength(50);
+
             builder
                 .Property(persona => persona.segundoApellido)
                 .HasMaxLength(50);
-            builder
-                .Property(persona => persona.idTipoDocumento);
+
+            builder.HasOne(persona => persona.Documentos)
+             .WithOne();
+
             builder
                 .Property(persona => persona.numeroDocumento)
                 .HasMaxLength(20);
-            builder
-                .Property(persona => persona.idDireccion);
-            builder
-                .Property(persona => persona.idTelefono);
-            builder
-                .Property(persona => persona.idEmail);
-            builder
-                .Property(persona => persona.idCondicion);
+
+            builder.HasOne(persona => persona.Direcciones)
+             .WithOne();
+
+            builder.HasOne(persona => persona.Telefonos)
+                .WithOne();
+
+            builder.HasOne(persona => persona.Emails)
+                .WithOne();
+
+            builder.HasOne(persona => persona.Condiciones)
+             .WithOne();
+
         }
     }
 }

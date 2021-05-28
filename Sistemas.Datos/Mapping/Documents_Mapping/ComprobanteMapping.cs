@@ -11,8 +11,11 @@ namespace Sistemas.Datos.Mapping.Documents_Mapping
     {
         public void Configure(EntityTypeBuilder<Comprobante> builder)
         {
-            builder.ToTable("tbl_comprobante").HasKey(comprbante => comprbante.idTipoComprobante);
-            builder.Property(comprobante => comprobante.tipoComprobante).HasMaxLength(20);
+            builder.ToTable("tbl_comprobante")
+                .HasKey(comprbante => comprbante.idTipoComprobante);
+
+            builder.Property(comprobante => comprobante.tipoComprobante)
+                .HasMaxLength(20);
 
         }
 

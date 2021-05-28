@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Sistemas.Entidades.Personal_Information
 {
-    public class Email
+   public class Email
     {
         public int idEmail { get; set; }
 

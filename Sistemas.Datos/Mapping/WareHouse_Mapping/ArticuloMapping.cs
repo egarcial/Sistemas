@@ -11,17 +11,29 @@ namespace Sistemas.Datos.Mapping.WareHouse_Mapping
     {
         public void Configure(EntityTypeBuilder<Articulo> builder)
         {
-            builder.ToTable("tbl_Articulo").HasKey(articulo => articulo.idCategoria);
-            builder.Property(articulo => articulo.idCategoria);
+            builder.ToTable("tbl_Articulo").HasKey(articulo => articulo.idArticulo);
+
             builder.Property(articulo => articulo.codigo)
                 .HasMaxLength(50);
+
             builder.Property(articulo => articulo.nombre)
                 .HasMaxLength(50);
+
             builder.Property(articulo => articulo.precioVenta);
+
             builder.Property(articulo => articulo.stock);
+
             builder.Property(articulo => articulo.descripcion)
                 .HasMaxLength(256);
-            builder.Property(articulo => articulo.idCondicion);
+
+            //relaciones entre entidades
+            builder.HasOne(articulo => articulo.Categorias)
+               .WithOne();
+
+            builder.HasOne(articulo => articulo.Condiciones)
+               .WithOne();
+
+
         }
     }
 }

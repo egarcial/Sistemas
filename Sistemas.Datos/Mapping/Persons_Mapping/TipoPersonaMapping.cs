@@ -13,6 +13,7 @@ namespace Sistemas.Datos.Mapping.Persons_Mapping
         {
             builder.ToTable("tbl_TipoPersona").
               HasKey(tPersona => tPersona.idTipoPersona);
+
             builder
                 .Property(tPersona => tPersona.idTipoPersona)
                 .HasMaxLength(50);

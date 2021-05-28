@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Sistemas.Entidades.Conditions;
+using Sistemas.Entidades.Documents;
+using Sistemas.Entidades.Persons;
+using Sistemas.Entidades.Users;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
@@ -8,9 +12,6 @@ namespace Sistemas.Entidades.Purchases
     public class Ingreso
     {
         public int idIngreso { get; set; }
-        public int idProveedor { get; set; }
-        public int idUsuario { get; set; }
-        public int idTipoComprobante { get; set; }
 
         [Display(Name = "Serie  Comprobante")]
         [Required(ErrorMessage = "Debe de ingresar serie de comprobante")]
@@ -24,13 +25,21 @@ namespace Sistemas.Entidades.Purchases
 
         [Display(Name = "Fecha")]
         [Required(ErrorMessage = "Debe de ingresar fecha")]
-        public string fechaHora { get; set; }
+        public DateTime fechaHora { get; set; }
 
         [Display(Name = "Impuesto")]
-        public double impuesto { get; set; }
+        public decimal impuesto { get; set; }
 
         [Display(Name = "Total")]
-        public double total { get; set; }
-        public int idEstado { get; set; }
+        public decimal total { get; set; }
+
+        public List<Persona> PersonaProveedor { get; set; }
+
+        public List<Usuario> Usuarios { get; set; }
+
+        public List<Comprobante> Comprobantes { get; set; }
+
+        public List<Estado> Estados { get; set; }
+
     }
 }

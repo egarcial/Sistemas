@@ -9,8 +9,7 @@ namespace Sistemas.Entidades.Personal_Information
     {
         public int idDireccion { get; set; }
         [Required]
-        public int idMunicipio { get; set; }
-
+       
         [Display(Name = "Nombre de Calle")]
         [StringLength(50, ErrorMessage = "Nombre de calle no puede sobrepasar los 50 caracteres")]
         public string nombreCalle { get; set; }
@@ -35,5 +34,8 @@ namespace Sistemas.Entidades.Personal_Information
         [Display(Name = "Referencia")]
         [StringLength(50, ErrorMessage = "Referencia no puede sobrepasar los 50 caracteres")]
         public string referencia { get; set; }
+
+        public List<Municipio> Municipios { get; set; }
+
     }
 }

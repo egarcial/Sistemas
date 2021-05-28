@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Sistemas.Entidades.Conditions;
+using Sistemas.Entidades.Documents;
+using Sistemas.Entidades.Personal_Information;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
@@ -8,7 +11,6 @@ namespace Sistemas.Entidades.Users
    public class Usuario
     {
         public int idUsuario { get; set; }
-        public int idRol { get; set; }
 
         [Display(Name = "Primer Nombre")]
         [Required(ErrorMessage = "Debe de ingresar primer nombre")]
@@ -28,31 +30,37 @@ namespace Sistemas.Entidades.Users
         [StringLength(50, ErrorMessage = "primer apellido  no puede sobrepasar los 50 caracteres")]
         public string primerApellido { get; set; }
 
-
         [Display(Name = "Sgundo Apellido")]
         [StringLength(50, ErrorMessage = "segundo apellidp  no puede sobrepasar los 50 caracteres")]
         public string segundoApellido { get; set; }
-
-        public int idTipoDocumento { get; set; }
 
         [Display(Name = "Numero Documento")]
         [Required(ErrorMessage = "Debe de ingresar número documento")]
         [StringLength(20, ErrorMessage = "número de documento no puede sobrepasar los 20 caracteres")]
         public string numeroDocumento { get; set; }
 
-        public int idDireccion { get; set; }
-        public int idTelefono { get; set; }
-        public int idEmail { get; set; }
-
         [Display(Name = "Contraseña hash")]
         [Required(ErrorMessage = "Debe de ingresar constraseña")]
         [StringLength(64, ErrorMessage = "contraseña no puede sobrepasar los 64 caracteres")]
-        public string passwordHash { get; set; }
+        public byte passwordHash { get; set; }
 
         [Display(Name = "Contraseña salt")]
         [Required(ErrorMessage = "Debe de ingresar constraseña")]
         [StringLength(64, ErrorMessage = "contraseña no puede sobrepasar los 64 caracteres")]
-        public string passwordSalt { get; set; }
-        public int idCondicion { get; set; }
+        public byte passwordSalt { get; set; }
+
+        public List<Condicion> Condiciones { get; set; }
+    
+        public List<Rol> Roles { get; set; }
+
+        public List<Documento> Documentos { get; set; }
+
+        public List<Direccion> Direcciones { get; set; }
+
+        public List<Telefono> Telefonos { get; set; }
+
+        public List<Email> Emails { get; set; }
+    
     }
+
 }

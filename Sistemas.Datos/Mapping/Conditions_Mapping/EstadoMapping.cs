@@ -13,6 +13,7 @@ namespace Sistemas.Datos.Mapping.Conditions_Mapping
         {
             builder.ToTable("tbl_Estado").
               HasKey(estado => estado.idEstado);
+
             builder
                 .Property(estado => estado.estado)
                 .HasMaxLength(20);

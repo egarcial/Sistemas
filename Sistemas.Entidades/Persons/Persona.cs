@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Sistemas.Entidades.Conditions;
+using Sistemas.Entidades.Documents;
+using Sistemas.Entidades.Personal_Information;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
@@ -8,8 +11,7 @@ namespace Sistemas.Entidades.Persons
     public class Persona
     {
         public int idPersona { get; set; }
-        public int idTipoPersona { get; set; }
-
+      
         [Display(Name = "Primer Nombre")]
         [Required(ErrorMessage = "Debe de ingresar primer nombre")]
         [StringLength(50, ErrorMessage = "primer nombre  no puede sobrepasar los 50 caracteres")]
@@ -32,16 +34,22 @@ namespace Sistemas.Entidades.Persons
         [StringLength(50, ErrorMessage = "segundo apellidp  no puede sobrepasar los 50 caracteres")]
         public string segundoApellido { get; set; }
 
-        public int idTipoDocumento { get; set; }
-
         [Display(Name = "Numero Documento")]
         [Required(ErrorMessage = "Debe de ingresar número documento")]
         [StringLength(20, ErrorMessage = "número de documento no puede sobrepasar los 20 caracteres")]
         public string numeroDocumento { get; set; }
 
-        public int idDireccion { get; set; }
-        public int idTelefono { get; set; }
-        public int idEmail { get; set; }
-        public int idCondicion { get; set; }
+        public List<TipoPersona> TipoPersonas { get; set; }
+
+        public List<Documento> Documentos { get; set; }
+
+        public List<Direccion> Direcciones { get; set; }
+
+        public List<Telefono> Telefonos { get; set; }
+
+        public List<Email> Emails { get; set; }
+
+        public List<Condicion> Condiciones { get; set; }
+
     }
 }

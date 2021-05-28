@@ -13,6 +13,7 @@ namespace Sistemas.Datos.Mapping.Conditions_Mapping
         {
             builder.ToTable("tbl_Condicion").
                 HasKey(condicion => condicion.idCondicion);
+
             builder.Property(condicion => condicion.condicion);
 
         }

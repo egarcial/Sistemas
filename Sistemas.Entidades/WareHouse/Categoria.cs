@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Sistemas.Entidades.Conditions;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Sistemas.Entidades.WareHouse
 {
@@ -15,7 +17,7 @@ namespace Sistemas.Entidades.WareHouse
         [StringLength(256)]
         public string descripcion { get; set; }
 
-        [Display(Name = "Condición")]
-        public int idCondicion { get; set; }
+        public List<Condicion> Condiciones { get; set; }
+       
     }
 }
