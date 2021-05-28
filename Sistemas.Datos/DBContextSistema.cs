@@ -57,7 +57,7 @@ namespace Sistemas.Datos
         public DbSet<Documento> Documentos { get; set; }
 
         public DbSet<Condicion> Condiciones { get; set; }
-
+          
         public DbSet<Estado> Estados { get; set; }
 
         /*traendo todas las opciones que nos permitan utilizar
